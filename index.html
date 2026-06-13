@@ -1,4 +1,161 @@
-Hello World!!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpskillNow</title>
 
-Welcome to AI Universe...
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #f4e8ff, #e9d5ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: #8b5cf6;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .course-title {
+            text-align: center;
+            color: #6d28d9;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        th {
+            background: #ede9fe;
+            color: #4c1d95;
+            text-align: left;
+            padding: 15px;
+            width: 35%;
+        }
+
+        td {
+            padding: 15px;
+            background: #faf7ff;
+        }
+
+        tr {
+            border-bottom: 1px solid #e9d5ff;
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .register-btn {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 10px;
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>UpskillNow</h1>
+            <p>Learn Today. Grow Tomorrow.</p>
+        </div>
+
+        <div class="content">
+
+            <h2 class="course-title">PowerApps Beginner</h2>
+
+            <table>
+                <tr>
+                    <th>Course Name</th>
+                    <td>PowerApps Beginner</td>
+                </tr>
+
+                <tr>
+                    <th>Duration</th>
+                    <td>3 Hours</td>
+                </tr>
+
+                <tr>
+                    <th>Course Fee</th>
+                    <td>₹999/-</td>
+                </tr>
+
+                <tr>
+                    <th>Venue</th>
+                    <td>Chennai</td>
+                </tr>
+            </table>
+
+            <a href="#" class="register-btn">Register Now</a>
+
+        </div>
+
+        <div class="footer">
+            © 2026 UpskillNow. All Rights Reserved.
+        </div>
+
+    </div>
+
+</body>
+</html>
