@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - UpSkillNow Training Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-svg {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            list-style: none;
+            justify-content: flex-end;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: rgba(37, 99, 235, 0.7);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #0f172a;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .course-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: #2563eb;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+        }
+        
+        .course-header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .course-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .course-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: white;
+        }
+        
+        .course-level {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        
+        .course-body {
+            padding: 25px;
+        }
+        
+        .course-body h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #0f172a;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #2563eb;
+        }
+        
+        .course-details {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .course-details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .course-details li {
+            margin-bottom: 5px;
+        }
+        
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 15px;
+        }
+        
+        .course-duration {
+            font-weight: 600;
+            color: #2563eb;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        .filter-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px;
+            background: #f0f9ff;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px 0;
+            font-size: 28px;
+            color: #0f172a;
+        }
+        
+        footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-section">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="80" height="80" rx="12" fill="url(#logoGradient)"/>
+                    <path d="M 35 55 L 45 35 L 55 45 L 65 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="35" cy="55" r="3" fill="white"/>
+                    <circle cx="65" cy="25" r="3" fill="white"/>
+                </svg>
+                <div class="brand-name">UpSkillNow</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="corporate-training.html">Corporate</a></li>
+                    <li><a href="batches.html">Batches</a></li>
+                    <li><a href="success-stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portal.html">Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Our Professional Courses</h1>
+        <p>Comprehensive training programs designed to accelerate your career in technology</p>
+    </section>
+
+    <div class="container">
+        <div class="filter-section">
+            <button class="filter-btn active">All Courses</button>
+            <button class="filter-btn">Beginner</button>
+            <button class="filter-btn">Intermediate</button>
+            <button class="filter-btn">Advanced</button>
+        </div>
+
+        <h2>Power BI & Data Analytics</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">📊</div>
+                    <h3>Power BI Fundamentals</h3>
+                    <span class="course-level">Beginner</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Learn the basics:</strong>
+                        <ul>
+                            <li>Data visualization principles</li>
+                            <li>Dashboard creation</li>
+                            <li>Report publishing</li>
+                            <li>Interactive filters</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 4 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">📈</div>
+                    <h3>Advanced Power BI</h3>
+                    <span class="course-level">Advanced</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Advanced techniques:</strong>
+                        <ul>
+                            <li>DAX formulas & calculations</li>
+                            <li>Data modeling</li>
+                            <li>Performance optimization</li>
+                            <li>Real-world projects</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 6 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🗂️</div>
+                    <h3>Data Analytics Mastery</h3>
+                    <span class="course-level">Intermediate</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Complete analytics:</strong>
+                        <ul>
+                            <li>Statistical analysis</li>
+                            <li>Trend analysis</li>
+                            <li>Predictive analytics</li>
+                            <li>Excel integration</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 5 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">AI & Machine Learning</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🤖</div>
+                    <h3>Python for AI</h3>
+                    <span class="course-level">Beginner</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Python fundamentals:</strong>
+                        <ul>
+                            <li>Python basics & syntax</li>
+                            <li>Libraries (NumPy, Pandas)</li>
+                            <li>Data manipulation</li>
+                            <li>Visualization tools</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 6 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🧠</div>
+                    <h3>Machine Learning Essentials</h3>
+                    <span class="course-level">Intermediate</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>ML concepts & applications:</strong>
+                        <ul>
+                            <li>Supervised learning</li>
+                            <li>Classification & Regression</li>
+                            <li>Model evaluation</li>
+                            <li>Real-world projects</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 8 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🔮</div>
+                    <h3>Deep Learning & NLP</h3>
+                    <span class="course-level">Advanced</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Advanced AI topics:</strong>
+                        <ul>
+                            <li>Neural networks</li>
+                            <li>NLP fundamentals</li>
+                            <li>Sentiment analysis</li>
+                            <li>Model deployment</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 10 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">Microsoft Office & Enterprise Tools</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">📄</div>
+                    <h3>Advanced Excel</h3>
+                    <span class="course-level">Beginner</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Excel mastery:</strong>
+                        <ul>
+                            <li>Advanced formulas</li>
+                            <li>Pivot tables</li>
+                            <li>Data validation</li>
+                            <li>Chart creation</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 4 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">⚙️</div>
+                    <h3>Power Apps & Automate</h3>
+                    <span class="course-level">Intermediate</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Build enterprise solutions:</strong>
+                        <ul>
+                            <li>Canvas apps development</li>
+                            <li>Power Automate flows</li>
+                            <li>Integration & APIs</li>
+                            <li>Business solutions</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 6 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🗄️</div>
+                    <h3>SQL & Database Design</h3>
+                    <span class="course-level">Intermediate</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Database mastery:</strong>
+                        <ul>
+                            <li>SQL fundamentals</li>
+                            <li>Complex queries</li>
+                            <li>Database design</li>
+                            <li>Performance tuning</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 5 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">Specialized & Certification Programs</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🏆</div>
+                    <h3>Microsoft Certification Prep</h3>
+                    <span class="course-level">Advanced</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Certification focused:</strong>
+                        <ul>
+                            <li>Exam preparation</li>
+                            <li>Practice tests</li>
+                            <li>Doubt clearing sessions</li>
+                            <li>100% success guarantee</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 4 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">💼</div>
+                    <h3>Career Development Program</h3>
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Complete career support:</strong>
+                        <ul>
+                            <li>Resume building</li>
+                            <li>Interview preparation</li>
+                            <li>Soft skills training</li>
+                            <li>Placement assistance</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 3 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <div class="course-icon">🚀</div>
+                    <h3>Industry Project Bootcamp</h3>
+                    <span class="course-level">Advanced</span>
+                </div>
+                <div class="course-body">
+                    <div class="course-details">
+                        <strong>Hands-on experience:</strong>
+                        <ul>
+                            <li>Real-world projects</li>
+                            <li>Client presentations</li>
+                            <li>Portfolio building</li>
+                            <li>Industry mentorship</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 12 weeks</span>
+                        <button class="btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About UpSkillNow</h4>
+                <p style="margin-bottom: 15px;">We empower professionals and organizations to master cutting-edge technology skills through expert instruction, hands-on learning, and proven career support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="batches.html">Upcoming Batches</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📧 info@upskillnow.com</li>
+                    <li>📞 +91-9876543210</li>
+                    <li>🏢 Bangalore, India</li>
+                    <li>🌐 www.upskillnow.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UpSkillNow. All rights reserved. | <a href="#" style="color: #cbd5e1;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

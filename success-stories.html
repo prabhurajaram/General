@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - UpSkillNow Alumni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-svg {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            list-style: none;
+            justify-content: flex-end;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: rgba(37, 99, 235, 0.7);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #0f172a;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat h3 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .story-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-8px);
+            border-color: #2563eb;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+        }
+        
+        .story-avatar {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .avatar-circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            margin: 0 auto 15px;
+        }
+        
+        .story-avatar h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .story-avatar p {
+            font-size: 14px;
+            color: #e0f2fe;
+        }
+        
+        .story-body {
+            padding: 25px;
+        }
+        
+        .story-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        
+        .story-quote {
+            background: #f8fafc;
+            padding: 15px;
+            border-left: 3px solid #2563eb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .story-body p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .story-highlights {
+            background: #f0f9ff;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        .story-highlights strong {
+            color: #2563eb;
+        }
+        
+        .filter-tags {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .tag-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            background: #f0f9ff;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .tag-btn:hover, .tag-btn.active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        .feature-story {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid #2563eb;
+        }
+        
+        .feature-story h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .feature-story .story-quote {
+            background: white;
+            margin: 20px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .star-rating {
+            color: #f59e0b;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2563eb;
+            font-size: 14px;
+        }
+        
+        footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-section">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="80" height="80" rx="12" fill="url(#logoGradient)"/>
+                    <path d="M 35 55 L 45 35 L 55 45 L 65 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="35" cy="55" r="3" fill="white"/>
+                    <circle cx="65" cy="25" r="3" fill="white"/>
+                </svg>
+                <div class="brand-name">UpSkillNow</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="corporate-training.html">Corporate</a></li>
+                    <li><a href="batches.html">Batches</a></li>
+                    <li><a href="success-stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portal.html">Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Success Stories from Our Alumni</h1>
+        <p>Real people, real transformations, real career growth. Meet the professionals who achieved their goals with UpSkillNow</p>
+    </section>
+
+    <div class="container">
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>5000+</h3>
+                    <p>Success Stories</p>
+                </div>
+                <div class="stat">
+                    <h3>95%</h3>
+                    <p>Placement Rate</p>
+                </div>
+                <div class="stat">
+                    <h3>₹85K+</h3>
+                    <p>Average Salary Increase</p>
+                </div>
+                <div class="stat">
+                    <h3>3 Months</h3>
+                    <p>Average to Placement</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-story">
+            <h3>🌟 Featured Success Story</h3>
+            <h4 style="color: #2563eb; margin-bottom: 10px;">Rahul Verma - From Support Engineer to Data Analytics Manager</h4>
+            <div class="story-quote">"The Power BI training at UpSkillNow was a game-changer. I went from managing support tickets to leading a data analytics team. My salary increased by ₹3 lakhs in the first year!"</div>
+            <p>Rahul was working as a support engineer earning ₹7 lakhs per annum. He joined our Advanced Power BI course and within 2 months of completion, he was promoted to a Data Analytics Specialist role at ₹8.5 lakhs. Six months later, he became a manager overseeing a team of 5 analysts.</p>
+            <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                <strong style="color: #2563eb;">Key Results:</strong> Salary increase: ₹3L → Promotion to manager role in 8 months → Now mentoring 5 team members
+            </div>
+        </div>
+
+        <h2>Alumni Success Stories</h2>
+        <div class="filter-tags">
+            <button class="tag-btn active">All</button>
+            <button class="tag-btn">Career Switch</button>
+            <button class="tag-btn">Salary Increase</button>
+            <button class="tag-btn">Promotion</button>
+            <button class="tag-btn">Entrepreneurship</button>
+        </div>
+
+        <div class="stories-grid">
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👩‍💼</div>
+                    <h3>Priya Menon</h3>
+                    <p>Data Analyst</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Power BI Fundamentals</span>
+                        <span class="meta-item">💼 Company: TCS</span>
+                    </div>
+                    <div class="story-quote">"I was a non-technical person in HR. UpSkillNow gave me the confidence to transition into data analytics. Now I manage dashboards for our entire HR team!"</div>
+                    <p>Started from HR background with no technical skills. Completed Power BI course and landed a role as Data Analyst at TCS within 6 weeks.</p>
+                    <div class="story-highlights">
+                        <strong>📈 Results:</strong> Career switch from HR to Data Analyst | Salary: ₹5.8L/year | Promoted in 8 months
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👨‍💻</div>
+                    <h3>Arjun Singh</h3>
+                    <p>AI Developer</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Python for AI</span>
+                        <span class="meta-item">💼 Company: Infosys</span>
+                    </div>
+                    <div class="story-quote">"The Python and AI course equipped me with hands-on ML skills. I'm now developing AI solutions for enterprise clients earning ₹12 lakhs annually."</div>
+                    <p>Software developer with 3 years experience. Upskilled in Python and AI, got promoted to Senior Developer with 40% salary hike.</p>
+                    <div class="story-highlights">
+                        <strong>💰 Results:</strong> Salary increase from ₹8.5L to ₹12L | Promoted to Senior Developer | Leading AI project team
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👩‍🔬</div>
+                    <h3>Divya Sharma</h3>
+                    <p>Analytics Consultant</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Data Analytics Mastery</span>
+                        <span class="meta-item">💼 Company: Deloitte</span>
+                    </div>
+                    <div class="story-quote">"The comprehensive data analytics program made me job-ready. I got placed at Deloitte as a Senior Analyst and my career graph has been nothing but upward!"</div>
+                    <p>Fresh MBA graduate. Completed intensive data analytics course and placed at Deloitte with ₹8 lakh package. Promoted twice in 2 years.</p>
+                    <div class="story-highlights">
+                        <strong>🎯 Results:</strong> Placement: Deloitte at ₹8L | Promotions: 2 in 24 months | Current: Senior Consultant at ₹14L
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👨‍🏭</div>
+                    <h3>Vikram Patel</h3>
+                    <p>Business Analyst</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Power Apps & Automate</span>
+                        <span class="meta-item">💼 Company: Accenture</span>
+                    </div>
+                    <div class="story-quote">"Power Apps training opened new doors. I started building enterprise apps for clients. My annual income increased by ₹2.5 lakhs!"</div>
+                    <p>Systems admin looking to transition. Power Apps course led to Business Analyst role at Accenture with 35% salary increase.</p>
+                    <div class="story-highlights">
+                        <strong>📊 Results:</strong> Role change from Sysadmin to BA | Salary: ₹7L → ₹9.5L | Projects: 12+ enterprise apps built
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👩‍💻</div>
+                    <h3>Anjali Desai</h3>
+                    <p>Freelance Consultant</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Advanced Power BI</span>
+                        <span class="meta-item">💼 Company: Self-Employed</span>
+                    </div>
+                    <div class="story-quote">"UpSkillNow transformed me from a job-seeker to an entrepreneur. Now I consult for multiple companies, building dashboards. Income: ₹1.5L+/month!"</div>
+                    <p>Unemployed after career break. Learned advanced BI skills and started freelancing. Now earns ₹1.5L+ monthly consulting for 5+ companies.</p>
+                    <div class="story-highlights">
+                        <strong>🚀 Results:</strong> Entrepreneurship: Consulting business | Monthly income: ₹1.5L+ | Clients: 5+ companies across industries
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-avatar">
+                    <div class="avatar-circle">👨‍💼</div>
+                    <h3>Rohan Gupta</h3>
+                    <p>Product Manager</p>
+                </div>
+                <div class="story-body">
+                    <div class="story-meta">
+                        <span class="meta-item">🎓 Course: Machine Learning</span>
+                        <span class="meta-item">💼 Company: Amazon</span>
+                    </div>
+                    <div class="story-quote">"ML training at UpSkillNow qualified me for Amazon. Now managing AI products. The best investment I made in my career!"</div>
+                    <p>IT Manager with 6 years experience. ML course led to Amazon interview. Selected as Product Manager, 45% salary increase, ₹18L annually.</p>
+                    <div class="story-highlights">
+                        <strong>💎 Results:</strong> FAANG placement: Amazon | Role: Product Manager | Salary: ₹12.5L → ₹18L | Direct impact on career trajectory
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">What Our Students Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"Excellent training quality, experienced instructors, and practical projects. The placement support was outstanding. Got placed within a month!"</p>
+                <div class="testimonial-author">— Sanjay Kumar, Power BI Graduate</div>
+            </div>
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"The curriculum is industry-relevant and up-to-date. Instructors have real-world experience which they share generously. Best decision ever!"</p>
+                <div class="testimonial-author">— Meera Iyer, Data Analytics Graduate</div>
+            </div>
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"Career-changing experience! I went from having zero coding knowledge to being a confident Python developer. Highly recommended!"</p>
+                <div class="testimonial-author">— Nikita Sharma, Python for AI Graduate</div>
+            </div>
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"The mentors are approachable, the batches are small, and everyone gets individual attention. The placement coordinator is phenomenal!"</p>
+                <div class="testimonial-author">— Aditya Malik, Advanced Excel Graduate</div>
+            </div>
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"Great hands-on learning with real-world projects. I was able to apply what I learned on the very first day at my new job!"</p>
+                <div class="testimonial-author">— Pooja Singh, Power Apps Graduate</div>
+            </div>
+            <div class="testimonial">
+                <div class="star-rating">★★★★★</div>
+                <p>"The flexibility of online classes combined with recorded sessions is perfect for working professionals. Highly convenient and effective!"</p>
+                <div class="testimonial-author">— Rajesh Nair, SQL Database Design Graduate</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About UpSkillNow</h4>
+                <p style="margin-bottom: 15px;">We empower professionals and organizations to master cutting-edge technology skills through expert instruction, hands-on learning, and proven career support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="batches.html">Upcoming Batches</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📧 info@upskillnow.com</li>
+                    <li>📞 +91-9876543210</li>
+                    <li>🏢 Bangalore, India</li>
+                    <li>🌐 www.upskillnow.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UpSkillNow. All rights reserved. | <a href="#" style="color: #cbd5e1;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

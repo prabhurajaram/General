@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Training Solutions - UpSkillNow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-svg {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            list-style: none;
+            justify-content: flex-end;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: rgba(37, 99, 235, 0.7);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #0f172a;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 22px;
+            margin: 30px 0 15px 0;
+            color: #0f172a;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .solution-card {
+            padding: 30px;
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .solution-card ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .solution-card li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .benefit-item:hover {
+            border-color: #2563eb;
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-item h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        
+        .benefit-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .process-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 auto 15px;
+        }
+        
+        .step h4 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .testimonial {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2563eb;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: white;
+            color: #2563eb;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-section">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="80" height="80" rx="12" fill="url(#logoGradient)"/>
+                    <path d="M 35 55 L 45 35 L 55 45 L 65 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="35" cy="55" r="3" fill="white"/>
+                    <circle cx="65" cy="25" r="3" fill="white"/>
+                </svg>
+                <div class="brand-name">UpSkillNow</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="corporate-training.html">Corporate</a></li>
+                    <li><a href="batches.html">Batches</a></li>
+                    <li><a href="success-stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portal.html">Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Corporate Training Solutions</h1>
+        <p>Custom technology training programs designed to upskill your workforce and drive business transformation</p>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>Why Corporate Training Matters</h2>
+            <p>In today's rapidly evolving technology landscape, continuous upskilling is essential for organizational success. Our corporate training solutions are designed to:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h4>Boost Productivity</h4>
+                    <p>Equip your team with latest tools and techniques to work more efficiently and effectively.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Reduce Costs</h4>
+                    <p>Minimize operational expenses through automation and optimized business processes.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <h4>Drive Innovation</h4>
+                    <p>Foster a culture of continuous learning and technological innovation within your organization.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <h4>Improve Retention</h4>
+                    <p>Employees value development opportunities. Upskilling boosts satisfaction and reduces turnover.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Corporate Training Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h4>📊 Data & Analytics Programs</h4>
+                    <p>Transform your organization's data into actionable insights with our comprehensive analytics training.</p>
+                    <ul>
+                        <li>Power BI Implementation</li>
+                        <li>Advanced Excel Training</li>
+                        <li>Data Analytics Certification</li>
+                        <li>Custom Dashboard Development</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4>🤖 AI & Automation</h4>
+                    <p>Harness AI and automation to streamline processes and create competitive advantage.</p>
+                    <ul>
+                        <li>Python Programming</li>
+                        <li>Machine Learning Basics</li>
+                        <li>Process Automation</li>
+                        <li>AI Strategy Workshops</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4>🔧 Microsoft Cloud Solutions</h4>
+                    <p>Master Microsoft cloud technologies for modern enterprise environments.</p>
+                    <ul>
+                        <li>Power Apps Development</li>
+                        <li>Power Automate</li>
+                        <li>Azure Fundamentals</li>
+                        <li>Cloud Integration</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4>💼 Leadership & Skills</h4>
+                    <p>Develop soft skills and leadership competencies alongside technical expertise.</p>
+                    <ul>
+                        <li>Digital Leadership</li>
+                        <li>Change Management</li>
+                        <li>Team Collaboration</li>
+                        <li>Communication Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <h2>Our Engagement Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Needs Assessment</h4>
+                    <p>We understand your organization's objectives and current skill gaps through detailed consultation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Custom Program Design</h4>
+                    <p>We design tailored training programs aligned with your business goals and employee levels.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Implementation</h4>
+                    <p>Delivery through online, on-site, or hybrid formats with expert instructors and hands-on projects.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Measurement & Support</h4>
+                    <p>Ongoing support, performance tracking, and continuous program optimization for maximum ROI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Training Delivery Models</h2>
+            <h3>Flexible Options for Your Organization</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 30px 0;">
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">Live Online Training</h4>
+                    <p style="color: #666; font-size: 14px;">Interactive sessions with live instructors, real-time Q&A, and peer collaboration. Perfect for distributed teams.</p>
+                </div>
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">On-Site Training</h4>
+                    <p style="color: #666; font-size: 14px;">In-person training at your office with customized content. Best for cohesive team building and hands-on learning.</p>
+                </div>
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">Hybrid Model</h4>
+                    <p style="color: #666; font-size: 14px;">Combination of online and in-person sessions. Maximum flexibility and engagement for your teams.</p>
+                </div>
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">Self-Paced Learning</h4>
+                    <p style="color: #666; font-size: 14px;">Pre-recorded modules with continuous support. Employees learn at their convenience with full access.</p>
+                </div>
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">Mentorship Programs</h4>
+                    <p style="color: #666; font-size: 14px;">One-on-one coaching with industry experts. Personalized learning for leadership and specialized roles.</p>
+                </div>
+                <div style="padding: 25px; background: #f8fafc; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    <h4 style="color: #2563eb; margin-bottom: 15px;">Workshops & Seminars</h4>
+                    <p style="color: #666; font-size: 14px;">Short, focused training sessions on specific topics. Ideal for awareness and skill refreshers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Client Success Stories</h2>
+            <div class="testimonial">
+                <div class="testimonial-text">"UpSkillNow's Power BI training transformed our reporting capabilities. Within 3 months, our team was creating interactive dashboards that saved 20+ hours monthly in manual reporting."</div>
+                <div class="testimonial-author">— Chief Analytics Officer, Leading Financial Services Firm</div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">"The customized training program was exactly what we needed. The instructors understood our business context and taught solutions we could apply immediately. ROI was evident within weeks."</div>
+                <div class="testimonial-author">— Operations Director, Manufacturing Company</div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3>Ready to Transform Your Organization?</h3>
+            <p>Let's discuss how our corporate training solutions can address your organization's unique needs and drive business growth.</p>
+            <a href="contact.html" class="btn">Request a Consultation</a>
+        </section>
+
+        <section>
+            <h2>Typical Training Package Includes</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Custom Curriculum</h4>
+                    <p style="color: #666; font-size: 14px;">Tailored to your specific business needs and current skill levels.</p>
+                </div>
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Expert Instructors</h4>
+                    <p style="color: #666; font-size: 14px;">Industry professionals with proven track record in training.</p>
+                </div>
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Certification</h4>
+                    <p style="color: #666; font-size: 14px;">Recognized certifications upon successful completion.</p>
+                </div>
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Hands-On Projects</h4>
+                    <p style="color: #666; font-size: 14px;">Real-world assignments using your organization's data.</p>
+                </div>
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Post-Training Support</h4>
+                    <p style="color: #666; font-size: 14px;">Ongoing assistance and refresher sessions included.</p>
+                </div>
+                <div style="padding: 20px; background: #f8fafc; border-radius: 8px;">
+                    <h4 style="color: #2563eb; margin-bottom: 10px; font-size: 16px;">✓ Performance Metrics</h4>
+                    <p style="color: #666; font-size: 14px;">Detailed reporting on learner progress and ROI.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About UpSkillNow</h4>
+                <p style="margin-bottom: 15px;">We empower professionals and organizations to master cutting-edge technology skills through expert instruction, hands-on learning, and proven career support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="batches.html">Upcoming Batches</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📧 info@upskillnow.com</li>
+                    <li>📞 +91-9876543210</li>
+                    <li>🏢 Bangalore, India</li>
+                    <li>🌐 www.upskillnow.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UpSkillNow. All rights reserved. | <a href="#" style="color: #cbd5e1;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

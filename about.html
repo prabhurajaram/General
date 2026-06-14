@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About UpSkillNow - Our Story & Mission</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-svg {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            list-style: none;
+            justify-content: flex-end;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: rgba(37, 99, 235, 0.7);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 22px;
+            margin: 30px 0 15px 0;
+            color: #0f172a;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .mission-box, .vision-box {
+            padding: 30px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+        }
+        
+        .mission-box h3, .vision-box h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .team-member h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #0f172a;
+        }
+        
+        .team-member p {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-member p.bio {
+            color: #666;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .value-card {
+            padding: 25px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .value-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        
+        .value-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-section">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="80" height="80" rx="12" fill="url(#logoGradient)"/>
+                    <path d="M 35 55 L 45 35 L 55 45 L 65 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="35" cy="55" r="3" fill="white"/>
+                    <circle cx="65" cy="25" r="3" fill="white"/>
+                </svg>
+                <div class="brand-name">UpSkillNow</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="corporate-training.html">Corporate</a></li>
+                    <li><a href="batches.html">Batches</a></li>
+                    <li><a href="success-stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portal.html">Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>About UpSkillNow</h1>
+        <p>Empowering professionals worldwide with industry-leading technology training and career advancement</p>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>Our Story</h2>
+            <p>UpSkillNow was founded in 2018 with a simple yet powerful mission: to bridge the gap between traditional education and industry-required skills. We recognized that professionals needed practical, hands-on training in emerging technologies like Power BI, Data Analytics, and AI to stay competitive in today's rapidly evolving job market.</p>
+            
+            <p>What started as a small training center has grown into a premier technology education platform serving over 5,000 students across multiple cities. Our success is built on a foundation of expert instructors, innovative curriculum, and an unwavering commitment to student success.</p>
+            
+            <p>Today, UpSkillNow continues to be at the forefront of professional development, helping individuals and enterprises master cutting-edge technologies that drive business transformation.</p>
+        </section>
+
+        <section>
+            <h2>Our Mission & Vision</h2>
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To empower professionals and organizations with industry-ready technology skills through quality education, expert mentorship, and proven career support, enabling them to succeed in the digital economy.</p>
+                </div>
+                <div class="vision-box">
+                    <h3>🌟 Our Vision</h3>
+                    <p>To be the most trusted technology training academy in India, known for transforming careers and creating leaders who drive innovation in their organizations and industries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h4>Excellence</h4>
+                    <p>We strive for excellence in every aspect - from curriculum design to instructor expertise and student outcomes.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4>Student-Centric</h4>
+                    <p>Our students are at the heart of everything we do. We prioritize their growth, success, and career advancement.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h4>Innovation</h4>
+                    <p>We continuously evolve our programs to keep pace with industry trends and emerging technologies.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🏆</div>
+                    <h4>Integrity</h4>
+                    <p>We maintain the highest standards of honesty and transparency in all our dealings with students and partners.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌐</div>
+                    <h4>Inclusivity</h4>
+                    <p>We believe in making quality education accessible to everyone, regardless of background or experience level.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h4>Empowerment</h4>
+                    <p>We empower individuals to take control of their careers and achieve their professional aspirations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Leadership Team</h2>
+            <p>Our team consists of industry veterans and passionate educators dedicated to transforming careers through technology education.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍💼</div>
+                    <h4>Rajesh Kumar</h4>
+                    <p>Founder & CEO</p>
+                    <p class="bio">15+ years in Microsoft technologies and business intelligence. Former consulting director at a Fortune 500 company.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💼</div>
+                    <h4>Priya Sharma</h4>
+                    <p>Director, Academics</p>
+                    <p class="bio">Expert in curriculum design with 12+ years of experience in data analytics and AI training program development.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🏫</div>
+                    <h4>Amit Patel</h4>
+                    <p>Head, Training & Development</p>
+                    <p class="bio">Certified trainer with expertise in Power BI, Python, and database management. Trained 2000+ professionals.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💻</div>
+                    <h4>Neha Desai</h4>
+                    <p>Director, Placement Cell</p>
+                    <p class="bio">Established partnerships with 500+ companies. Achieved 95% placement success rate for our students.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why Students Choose UpSkillNow</h2>
+            <h3>Industry-Relevant Curriculum</h3>
+            <p>Our courses are designed in collaboration with industry leaders and updated quarterly to reflect current market demands. We focus on practical skills that employers actually need, not outdated theoretical concepts.</p>
+            
+            <h3>Expert Instructors</h3>
+            <p>All our instructors bring 10+ years of real-world experience in their respective domains. They understand the challenges professionals face and teach with practical examples from their own careers.</p>
+            
+            <h3>Hands-On Learning Approach</h3>
+            <p>We believe in learning by doing. Our 70:30 practical-to-theory ratio ensures students work on real-world projects, build portfolios, and gain confidence in applying their knowledge.</p>
+            
+            <h3>Placement Guarantee</h3>
+            <p>We don't just teach; we ensure placement. Our dedicated placement cell works with 500+ companies to find opportunities for our graduates. 95% of our students secure relevant roles within 3 months of completion.</p>
+            
+            <h3>Flexible Learning Options</h3>
+            <p>Whether you prefer live online classes, in-person batches, or self-paced learning, we have a flexible model that fits your schedule and learning style.</p>
+            
+            <h3>Post-Training Support</h3>
+            <p>Our support doesn't end at course completion. Students receive lifetime access to materials, can attend refresher sessions, and have continued access to our vibrant community of professionals.</p>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px; border-radius: 12px;">
+            <h2 style="border-bottom: 3px solid #2563eb; padding-bottom: 15px;">By The Numbers</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">5000+</h3>
+                    <p style="color: #555;">Students Successfully Trained</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">95%</h3>
+                    <p style="color: #555;">Placement Success Rate</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">25+</h3>
+                    <p style="color: #555;">Specialized Courses</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">500+</h3>
+                    <p style="color: #555;">Hiring Partner Companies</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">6+</h3>
+                    <p style="color: #555;">Years of Excellence</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 36px; color: #2563eb; margin-bottom: 10px;">4.8★</h3>
+                    <p style="color: #555;">Average Student Rating</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About UpSkillNow</h4>
+                <p style="margin-bottom: 15px;">We empower professionals and organizations to master cutting-edge technology skills through expert instruction, hands-on learning, and proven career support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="batches.html">Upcoming Batches</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📧 info@upskillnow.com</li>
+                    <li>📞 +91-9876543210</li>
+                    <li>🏢 Bangalore, India</li>
+                    <li>🌐 www.upskillnow.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UpSkillNow. All rights reserved. | <a href="#" style="color: #cbd5e1;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
